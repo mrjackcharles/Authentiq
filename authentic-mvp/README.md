@@ -8,8 +8,23 @@
 -   Third Web (Smart contract)
 -   Chainstack (RPC endpoint)
 -   Polygon Amoy (test blockchain with deployed ERC721 contract)
+    <br>
+    <br>
 
-Version: 0.0.1
+### Features
+
+-   Generates item with unique block-chain certificate
+-   Image stored on a IPFS (decentralised)
+    <br>
+    <br>
+    Version: 0.0.2
+    <br>
+    Copyrighted 2025
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
