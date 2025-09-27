@@ -28,3 +28,7 @@ body {
 @tailwind base;
 @tailwind compontents;
 @tailwind utilities;
+
+body {
+    @apply text-blue-500; /* Tailwind class applied globally */
+}
