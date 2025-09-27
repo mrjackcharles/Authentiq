@@ -19,12 +19,15 @@
     <br>
     Version: 0.0.2
     <br>
-    Copyrighted 2025
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+---
+
+© 2025 Jack Charles. All rights reserved.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
