@@ -51,3 +51,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+## Firebase persistence
+
+To permanently store minted items and their details (tokenId, serial, metadata) in Firestore, the API uses the Firebase Admin SDK.
+
+1. Enable Firestore in your Firebase project.
+2. Create a Service Account and generate a JSON key in Firebase/Google Cloud Console.
+3. Add these to `.env.local`:
+
+```
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_CLIENT_EMAIL=your_service_account_email@your_project_id.iam.gserviceaccount.com
+# If your private key contains line breaks, keep it quoted; the code converts \n to newlines
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIE...\n-----END PRIVATE KEY-----\n"
+```
+
+The mint API writes to the `mintedItems` collection using the `tokenId` as the document ID. See `lib/firebaseAdmin.js` and `pages/api/mint.js`.

@@ -12,6 +12,7 @@
     "@thirdweb-dev/sdk": "^4.0.60",
     "ethers": "^5.8.0",
     "firebase": "^12.2.1",
+    "firebase-admin": "^13.5.0",
     "next": "15.5.3",
     "qrcode.react": "^4.2.0",
     "react": "19.1.0",

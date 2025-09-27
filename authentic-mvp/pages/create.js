@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Layout from "@/components/Layout";
+// Layout is provided globally in pages/_app.js
 
 export default function Create() {
     const router = useRouter();
@@ -13,23 +13,18 @@ export default function Create() {
 
         try {
             let imageUrl = "";
+            let imageBase64 = null;
             if (data.image[0]) {
-                const formData = new FormData();
-                formData.append("file", data.image[0]);
-
-                const uploadRes = await fetch(
-                    "https://api.thirdweb.com/v1/storage/upload",
-                    {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            Authorization: `Bearer ${process.env.NEXT_PUBLIC_THIRDWEB_API_KEY}`,
-                        },
-                    }
-                );
-
-                const uploadJson = await uploadRes.json();
-                imageUrl = uploadJson.uri;
+                const file = data.image[0];
+                const arrayBuffer = await file.arrayBuffer();
+                const bytes = new Uint8Array(arrayBuffer);
+                let binary = "";
+                const chunkSize = 0x8000; // 32KB chunks to avoid call stack limits
+                for (let i = 0; i < bytes.length; i += chunkSize) {
+                    const chunk = bytes.subarray(i, i + chunkSize);
+                    binary += String.fromCharCode.apply(null, chunk);
+                }
+                imageBase64 = btoa(binary);
             }
 
             const res = await fetch("/api/mint", {
@@ -39,7 +34,8 @@ export default function Create() {
                     name: data.name,
                     description: data.description,
                     serial: data.serial,
-                    imageUrl,
+                    imageUrl, // optional, if you want to pass a pre-uploaded URL
+                    imageBase64, // alternatively, let the server upload via SDK
                 }),
             });
 
@@ -60,7 +56,7 @@ export default function Create() {
     };
 
     return (
-        <Layout>
+        <>
             <h1 className="text-xl font-bold">Create Certificate</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
                 <input
@@ -87,6 +83,6 @@ export default function Create() {
                     {loading ? "Minting..." : "Mint"}
                 </button>
             </form>
-        </Layout>
+        </>
     );
 }
