@@ -12,7 +12,7 @@ export default function Create() {
         setLoading(true);
 
         try {
-            let imageUrl = "";
+            let imageUrl = null;
             let imageBase64 = null;
             if (data.image[0]) {
                 const file = data.image[0];
@@ -34,7 +34,7 @@ export default function Create() {
                     name: data.name,
                     description: data.description,
                     serial: data.serial,
-                    imageUrl, // optional, if you want to pass a pre-uploaded URL
+                    imageUrl: imageUrl || null, // pre-uploaded URL if available
                     imageBase64, // alternatively, let the server upload via SDK
                 }),
             });
@@ -57,27 +57,27 @@ export default function Create() {
 
     return (
         <>
-            <h1 className="text-xl font-bold">Create Certificate</h1>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
+            <h1 className="text-xl font-semibold text-[#4c1d95]">Create Certificate</h1>
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
                 <input
                     {...register("name")}
                     placeholder="Product Name"
-                    className="border p-2 w-full"
+                    className="w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
                 />
                 <input
                     {...register("serial")}
                     placeholder="Serial Number"
-                    className="border p-2 w-full"
+                    className="w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
                 />
                 <textarea
                     {...register("description")}
                     placeholder="Description"
-                    className="border p-2 w-full"
+                    className="w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
                 />
                 <input type="file" {...register("image")} />
                 <button
                     type="submit"
-                    className="bg-black text-white px-4 py-2 rounded disabled:opacity-50"
+                    className="rounded bg-[#5b21b6] px-4 py-2 font-semibold text-white hover:bg-[#4c1d95] disabled:opacity-50"
                     disabled={loading}
                 >
                     {loading ? "Minting..." : "Mint"}
