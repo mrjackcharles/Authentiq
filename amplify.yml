@@ -1,18 +1,21 @@
 version: 1
 applications:
-  - appRoot: authentic-mvp
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - npm ci
-        build:
-          commands:
-            - npm run build
-      artifacts:
-        baseDirectory: .next
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
+    - appRoot: authentic-mvp
+      frontend:
+          phases:
+              preBuild:
+                  commands:
+                      - npm ci
+              build:
+                  commands:
+                      - npm run build
+          artifacts:
+              baseDirectory: out
+              files:
+                  - "**/*"
+          cache:
+              paths:
+                  - node_modules/**/*
+      appSettings:
+          artifactsBaseDirectory: out
+          framework: nextjs
