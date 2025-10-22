@@ -29,5 +29,5 @@ body {
 @tailwind utilities;
 
 body {
-    @apply font-sans text-slate-900 bg-[#f5f3ff];
+    @apply font-sans text-slate-900 bg-[#f0fbf6];
 }

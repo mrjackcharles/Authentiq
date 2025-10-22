@@ -23,7 +23,7 @@ export default function Dashboard({ items = [], error = null }) {
         <div>
             <h1 className="text-xl font-semibold">Minted Certificates</h1>
             {error && (
-                <p className="mt-2 text-[#7c3aed]">Failed to load: {error}</p>
+                <p className="mt-2 text-[#0c7a5a]">Failed to load: {error}</p>
             )}
             {items.length === 0 ? (
                 <p className="text-gray-600 mt-3">No items minted yet.</p>
@@ -62,7 +62,7 @@ export default function Dashboard({ items = [], error = null }) {
                                     <div className="mt-2">
                                         <Link
                                             href={`/certificate/${it.tokenId}`}
-                                            className="text-sm font-medium text-[#5b21b6] hover:text-[#4c1d95] hover:underline"
+                                            className="text-sm font-medium text-[#005d43] hover:text-[#004834] hover:underline"
                                         >
                                             View certificate
                                         </Link>

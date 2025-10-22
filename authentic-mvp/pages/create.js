@@ -57,27 +57,27 @@ export default function Create() {
 
     return (
         <>
-            <h1 className="text-xl font-semibold text-[#4c1d95]">Create Certificate</h1>
+            <h1 className="text-xl font-semibold text-[#004834]">Create Certificate</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
                 <input
                     {...register("name")}
                     placeholder="Product Name"
-                    className="w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
+                    className="w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
                 />
                 <input
                     {...register("serial")}
                     placeholder="Serial Number"
-                    className="w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
+                    className="w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
                 />
                 <textarea
                     {...register("description")}
                     placeholder="Description"
-                    className="w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
+                    className="w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
                 />
                 <input type="file" {...register("image")} />
                 <button
                     type="submit"
-                    className="rounded bg-[#5b21b6] px-4 py-2 font-semibold text-white hover:bg-[#4c1d95] disabled:opacity-50"
+                    className="rounded bg-[#005d43] px-4 py-2 font-semibold text-white hover:bg-[#004834] disabled:opacity-50"
                     disabled={loading}
                 >
                     {loading ? "Minting..." : "Mint"}

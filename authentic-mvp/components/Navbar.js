@@ -17,7 +17,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-[#4c1d95] via-[#6d28d9] to-[#8b5cf6] text-white shadow">
+        <nav className="bg-gradient-to-r from-[#003d2d] via-[#005d43] to-[#0f8c68] text-white shadow">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
                 <div className="flex flex-1 items-center gap-6 text-sm font-medium">
                     <Link href="/" className="text-white/85 transition hover:text-white">
@@ -50,7 +50,7 @@ export default function Navbar() {
                             </span>
                             <button
                                 type="button"
-                                className="rounded-full bg-white/25 px-4 py-2 font-medium text-[#3b0764] transition hover:bg-white/40 disabled:opacity-70"
+                                className="rounded-full bg-white/25 px-4 py-2 font-medium text-[#00251b] transition hover:bg-white/40 disabled:opacity-70"
                                 onClick={handleLogout}
                                 disabled={busy}
                             >
@@ -60,7 +60,7 @@ export default function Navbar() {
                     ) : (
                         <Link
                             href="/login"
-                            className="rounded-full bg-white px-4 py-2 font-semibold text-[#5b21b6] shadow hover:bg-[#ede9fe]"
+                            className="rounded-full bg-white px-4 py-2 font-semibold text-[#005d43] shadow hover:bg-[#dff5ee]"
                         >
                             Log in
                         </Link>

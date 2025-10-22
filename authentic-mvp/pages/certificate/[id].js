@@ -125,7 +125,7 @@ export default function Certificate() {
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                     {contractAddress && (
                         <a
-                            className="text-sm font-medium text-[#5b21b6] hover:text-[#4c1d95] hover:underline"
+                            className="text-sm font-medium text-[#005d43] hover:text-[#004834] hover:underline"
                             href={tokenExplorerUrl}
                             target="_blank"
                             rel="noreferrer"
@@ -135,7 +135,7 @@ export default function Certificate() {
                     )}
                     {txExplorerUrl && (
                         <a
-                            className="text-sm font-medium text-[#5b21b6] hover:text-[#4c1d95] hover:underline"
+                            className="text-sm font-medium text-[#005d43] hover:text-[#004834] hover:underline"
                             href={txExplorerUrl}
                             target="_blank"
                             rel="noreferrer"
@@ -146,7 +146,7 @@ export default function Certificate() {
                     <button
                         type="button"
                         onClick={() => typeof window !== "undefined" && window.print()}
-                        className="ml-auto rounded bg-[#5b21b6] px-3 py-2 text-sm font-semibold text-white hover:bg-[#4c1d95]"
+                        className="ml-auto rounded bg-[#005d43] px-3 py-2 text-sm font-semibold text-white hover:bg-[#004834]"
                     >
                         Print
                     </button>

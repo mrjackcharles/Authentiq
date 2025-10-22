@@ -70,7 +70,7 @@ export default function Login() {
                 <p className="text-gray-700">You are already signed in as {user.email}.</p>
                 <button
                     type="button"
-                    className="font-medium text-[#5b21b6] underline"
+                    className="font-medium text-[#005d43] underline"
                     onClick={() => router.push("/dashboard")}
                 >
                     Go to dashboard
@@ -83,12 +83,12 @@ export default function Login() {
 
     return (
         <div className="mx-auto max-w-md rounded bg-white p-6 shadow">
-            <h1 className="mb-4 text-2xl font-semibold text-[#4c1d95]">{heading}</h1>
+            <h1 className="mb-4 text-2xl font-semibold text-[#004834]">{heading}</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <label className="block">
                     <span className="block text-sm font-medium text-gray-700">Email</span>
                     <input
-                        className="mt-1 w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
+                        className="mt-1 w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
                         placeholder="you@example.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -100,7 +100,7 @@ export default function Login() {
                 <label className="block">
                     <span className="block text-sm font-medium text-gray-700">Password</span>
                     <input
-                        className="mt-1 w-full rounded border border-[#d9d2ff] p-2 focus:border-[#7c3aed] focus:outline-none"
+                        className="mt-1 w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
                         placeholder="Enter a password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -111,7 +111,7 @@ export default function Login() {
                 </label>
                 {error && <p className="text-sm text-red-600">{error}</p>}
                 <button
-                    className="w-full rounded bg-[#5b21b6] px-4 py-2 font-semibold text-white transition hover:bg-[#4c1d95] disabled:opacity-70"
+                    className="w-full rounded bg-[#005d43] px-4 py-2 font-semibold text-white transition hover:bg-[#004834] disabled:opacity-70"
                     type="submit"
                     disabled={submitting}
                 >
@@ -120,7 +120,7 @@ export default function Login() {
             </form>
             <button
                 type="button"
-                className="mt-4 text-sm font-medium text-[#7c3aed] hover:text-[#5b21b6]"
+                className="mt-4 text-sm font-medium text-[#0c7a5a] hover:text-[#005d43]"
                 onClick={() => setMode(nextMode)}
             >
                 {toggle}

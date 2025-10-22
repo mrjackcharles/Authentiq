@@ -25,7 +25,7 @@ const workflow = [
 export default function Home() {
     return (
         <div className="space-y-16 py-12">
-            <section className="rounded-3xl bg-gradient-to-br from-[#4c1d95] via-[#6d28d9] to-[#8b5cf6] text-white p-10 shadow-xl">
+            <section className="rounded-3xl bg-gradient-to-br from-[#003d2d] via-[#005d43] to-[#0f8c68] text-white p-10 shadow-xl">
                 <div className="space-y-6 max-w-2xl">
                     <p className="uppercase tracking-[0.4em] text-xs sm:text-sm text-violet-100">Authenticate Anything</p>
                     <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">
@@ -38,7 +38,7 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                         <Link
                             href="/login"
-                            className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 font-semibold text-[#5b21b6] shadow hover:bg-[#ede9fe]"
+                            className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 font-semibold text-[#005d43] shadow hover:bg-[#dff5ee]"
                         >
                             Access dashboard
                         </Link>
@@ -56,9 +56,9 @@ export default function Home() {
                 <h2 className="text-2xl font-semibold text-gray-900">Why brands trust Authentiq</h2>
                 <div className="grid gap-6 md:grid-cols-3">
                     {sellingPoints.map((point) => (
-                        <div key={point.title} className="rounded-2xl bg-white p-6 shadow-sm border border-[#e9d8ff]">
-                            <h3 className="text-lg font-semibold text-[#4c1d95]">{point.title}</h3>
-                            <p className="mt-3 text-sm text-[#5b21b6] leading-relaxed">{point.description}</p>
+                        <div key={point.title} className="rounded-2xl bg-white p-6 shadow-sm border border-[#d8f1e6]">
+                            <h3 className="text-lg font-semibold text-[#004834]">{point.title}</h3>
+                            <p className="mt-3 text-sm text-[#005d43] leading-relaxed">{point.description}</p>
                         </div>
                     ))}
                 </div>
@@ -69,7 +69,7 @@ export default function Home() {
                 <ol className="space-y-4">
                     {workflow.map((step, index) => (
                         <li key={step} className="flex items-start gap-3">
-                            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#ede9fe] text-[#5b21b6] font-semibold">
+                            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#dff5ee] text-[#005d43] font-semibold">
                                 {index + 1}
                             </span>
                             <p className="flex-1 text-sm sm:text-base text-[#43303f] leading-relaxed">{step}</p>
@@ -78,23 +78,23 @@ export default function Home() {
                 </ol>
             </section>
 
-            <section className="rounded-2xl bg-white border border-[#e9d8ff] p-8 shadow-sm">
+            <section className="rounded-2xl bg-white border border-[#d8f1e6] p-8 shadow-sm">
                 <div className="space-y-4 text-center">
-                    <h2 className="text-2xl font-semibold text-[#4c1d95]">Ready to issue your next certificate?</h2>
-                    <p className="text-base text-[#5b21b6] max-w-2xl mx-auto leading-relaxed">
+                    <h2 className="text-2xl font-semibold text-[#004834]">Ready to issue your next certificate?</h2>
+                    <p className="text-base text-[#005d43] max-w-2xl mx-auto leading-relaxed">
                         Join other luxury brands, collectors, and marketplaces who rely on Authentiq to keep forged goods out of circulation.
                         Start minting certificates in minutes.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <Link
                             href="/login"
-                            className="inline-flex items-center justify-center rounded-full bg-[#5b21b6] px-5 py-3 font-semibold text-white shadow hover:bg-[#4c1d95]"
+                            className="inline-flex items-center justify-center rounded-full bg-[#005d43] px-5 py-3 font-semibold text-white shadow hover:bg-[#004834]"
                         >
                             Sign in to mint
                         </Link>
                         <a
                             href="mailto:hello@authentiq.com"
-                            className="inline-flex items-center justify-center rounded-full border border-[#7c3aed] px-5 py-3 font-semibold text-[#7c3aed] hover:bg-[#ede9fe]"
+                            className="inline-flex items-center justify-center rounded-full border border-[#0c7a5a] px-5 py-3 font-semibold text-[#0c7a5a] hover:bg-[#dff5ee]"
                         >
                             Talk to sales
                         </a>
