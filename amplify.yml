@@ -8,17 +8,12 @@ applications:
                       - nvm install 20
                       - nvm use 20
                       - node -v
-                      - corepack enable || true
-                      - if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; \
-                        elif [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-                        elif [ -f package-lock.json ]; then npm ci; \
-                        else npm install; fi
+                      - npm ci
               build:
                   commands:
-                      - if [ -f pnpm-lock.yaml ]; then pnpm build; \
-                        elif [ -f yarn.lock ]; then yarn build; \
-                        else npm run build; fi
+                      - npm run build
           artifacts:
+              baseDirectory: .amplify-hosting
               files:
                   - "**/*"
           cache:
