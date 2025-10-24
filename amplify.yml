@@ -12,6 +12,7 @@ frontend:
             commands:
                 - npm run build
     artifacts:
+        baseDirectory: authentic-mvp/.next/static
         files:
             - "**/*"
     cache:
