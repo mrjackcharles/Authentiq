@@ -11,6 +11,7 @@ frontend:
                 - npm ci
         build:
             commands:
+                - cd authentic-mvp
                 - npm run build
     artifacts:
         baseDirectory: authentic-mvp/.next/static
