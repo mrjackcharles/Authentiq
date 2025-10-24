@@ -1,18 +1,27 @@
 version: 1
 applications:
-    - appRoot: authentic-mvp
+    - appRoot: authentiq-mvp
       frontend:
           phases:
               preBuild:
                   commands:
-                      - npm ci
+                      - nvm install 20
+                      - nvm use 20
+                      - node -v
+                      - corepack enable || true
+                      - if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; \
+                        elif [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+                        elif [ -f package-lock.json ]; then npm ci; \
+                        else npm install; fi
               build:
                   commands:
-                      - npm run build
+                      - if [ -f pnpm-lock.yaml ]; then pnpm build; \
+                        elif [ -f yarn.lock ]; then yarn build; \
+                        else npm run build; fi
           artifacts:
-              baseDirectory: .next
               files:
                   - "**/*"
           cache:
               paths:
                   - node_modules/**/*
+                  - .next/cache/**/*
