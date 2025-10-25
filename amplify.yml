@@ -14,10 +14,10 @@ applications:
                   commands:
                       - npm run build
           artifacts:
-              baseDirectory: authentic-mvp/.next
+              baseDirectory: .next
               files:
                   - "**/*"
           cache:
               paths:
-                  - authentic-mvp/node_modules/**/*
-                  - authentic-mvp/.next/cache/**/*
+                  - /node_modules/**/*
+                  - /.next/cache/**/*
