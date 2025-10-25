@@ -1,23 +1,23 @@
 version: 1
 applications:
     - appRoot: authentic-mvp
-frontend:
-    phases:
-        preBuild:
-            commands:
-                - nvm install 20
-                - nvm use 20
-                - node -v
-                - echo "PWD=$(pwd)"; ls -la
-                - npm ci
-        build:
-            commands:
-                - npm run build
-    artifacts:
-        baseDirectory: authentic-mvp/.next
-        files:
-            - "**/*"
-    cache:
-        paths:
-            - authentic-mvp/node_modules/**/*
-            - authentic-mvp/.next/cache/**/*
+      frontend:
+          phases:
+              preBuild:
+                  commands:
+                      - nvm install 20
+                      - nvm use 20
+                      - node -v
+                      - echo "PWD=$(pwd)"; ls -la
+                      - npm ci
+              build:
+                  commands:
+                      - npm run build
+      artifacts:
+          baseDirectory: authentic-mvp/.next
+          files:
+              - "**/*"
+      cache:
+          paths:
+              - authentic-mvp/node_modules/**/*
+              - authentic-mvp/.next/cache/**/*
