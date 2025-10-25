@@ -13,11 +13,11 @@ applications:
               build:
                   commands:
                       - npm run build
-      artifacts:
-          baseDirectory: authentic-mvp/.next
-          files:
-              - "**/*"
-      cache:
-          paths:
-              - authentic-mvp/node_modules/**/*
-              - authentic-mvp/.next/cache/**/*
+          artifacts:
+              baseDirectory: authentic-mvp/.next
+              files:
+                  - "**/*"
+          cache:
+              paths:
+                  - authentic-mvp/node_modules/**/*
+                  - authentic-mvp/.next/cache/**/*
