@@ -66,11 +66,11 @@ export default function Login() {
 
     if (!initializing && user) {
         return (
-            <div className="space-y-4">
-                <p className="text-gray-700">You are already signed in as {user.email}.</p>
+            <div className="space-y-4 text-[#d6d3d1]">
+                <p>You are already signed in as {user.email}.</p>
                 <button
                     type="button"
-                    className="font-medium text-[#005d43] underline"
+                    className="font-medium text-[#bfa181] underline hover:text-[#e1c16e]"
                     onClick={() => router.push("/dashboard")}
                 >
                     Go to dashboard
@@ -82,13 +82,13 @@ export default function Login() {
     const { heading, cta, toggle, nextMode } = MODES[mode];
 
     return (
-        <div className="mx-auto max-w-md rounded bg-white p-6 shadow">
-            <h1 className="mb-4 text-2xl font-semibold text-[#004834]">{heading}</h1>
+        <div className="mx-auto max-w-md rounded border border-[#27272a] bg-[#1e1e1e] p-6 shadow-lg">
+            <h1 className="mb-4 text-2xl font-semibold text-[#f5f5f4]">{heading}</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <label className="block">
-                    <span className="block text-sm font-medium text-gray-700">Email</span>
+                    <span className="block text-sm font-medium text-[#d6d3d1]">Email</span>
                     <input
-                        className="mt-1 w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
+                        className="mt-1 w-full rounded border border-[#27272a] bg-[#1e1e1e] p-2 text-[#f5f5f4] placeholder:text-[#8e8e8e] focus:border-[#bfa181] focus:outline-none focus:ring-2 focus:ring-[#bfa181]"
                         placeholder="you@example.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -98,9 +98,9 @@ export default function Login() {
                     />
                 </label>
                 <label className="block">
-                    <span className="block text-sm font-medium text-gray-700">Password</span>
+                    <span className="block text-sm font-medium text-[#d6d3d1]">Password</span>
                     <input
-                        className="mt-1 w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
+                        className="mt-1 w-full rounded border border-[#27272a] bg-[#1e1e1e] p-2 text-[#f5f5f4] placeholder:text-[#8e8e8e] focus:border-[#bfa181] focus:outline-none focus:ring-2 focus:ring-[#bfa181]"
                         placeholder="Enter a password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -109,9 +109,9 @@ export default function Login() {
                         required
                     />
                 </label>
-                {error && <p className="text-sm text-red-600">{error}</p>}
+                {error && <p className="text-sm text-[#e1c16e]">{error}</p>}
                 <button
-                    className="w-full rounded bg-[#005d43] px-4 py-2 font-semibold text-white transition hover:bg-[#004834] disabled:opacity-70"
+                    className="w-full rounded bg-[#bfa181] px-4 py-2 font-semibold text-[#121212] transition hover:bg-[#e1c16e] disabled:opacity-70"
                     type="submit"
                     disabled={submitting}
                 >
@@ -120,7 +120,7 @@ export default function Login() {
             </form>
             <button
                 type="button"
-                className="mt-4 text-sm font-medium text-[#0c7a5a] hover:text-[#005d43]"
+                className="mt-4 text-sm font-medium text-[#bfa181] hover:text-[#e1c16e]"
                 onClick={() => setMode(nextMode)}
             >
                 {toggle}

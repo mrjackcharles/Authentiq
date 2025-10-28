@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #121212;
+    --surface: #1e1e1e;
+    --foreground: #f5f5f4;
+    --muted: #d6d3d1;
+    --accent: #bfa181;
+    --accent-hover: #e1c16e;
+    --border: #27272a;
 }
 
 @theme inline {
@@ -14,8 +19,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+        --background: #121212;
+        --surface: #1e1e1e;
+        --foreground: #f5f5f4;
+        --muted: #d6d3d1;
     }
 }
 
@@ -29,5 +36,5 @@ body {
 @tailwind utilities;
 
 body {
-    @apply font-sans text-slate-900 bg-[#f0fbf6];
+    @apply font-sans bg-[#121212] text-[#f5f5f4];
 }

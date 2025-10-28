@@ -16,22 +16,22 @@ export default function Dashboard({ items = [], error = null }) {
     }, [initializing, user, router]);
 
     if (initializing || !user) {
-        return <p className="text-gray-600">Loading…</p>;
+        return <p className="text-[#d6d3d1]">Loading…</p>;
     }
 
     return (
         <div>
-            <h1 className="text-xl font-semibold">Minted Certificates</h1>
+            <h1 className="text-xl font-semibold text-[#f5f5f4]">Minted Certificates</h1>
             {error && (
-                <p className="mt-2 text-[#0c7a5a]">Failed to load: {error}</p>
+                <p className="mt-2 text-[#e1c16e]">Failed to load: {error}</p>
             )}
             {items.length === 0 ? (
-                <p className="text-gray-600 mt-3">No items minted yet.</p>
+                <p className="mt-3 text-[#d6d3d1]">No items minted yet.</p>
             ) : (
-                <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {items.map((it) => {
                         return (
-                        <li key={it.tokenId} className="bg-white shadow p-4 rounded">
+                        <li key={it.tokenId} className="rounded border border-[#27272a] bg-[#1e1e1e] p-4 shadow">
                             <div className="flex items-start gap-4">
                                 {it.imageUrl ? (
                                     <img
@@ -40,29 +40,29 @@ export default function Dashboard({ items = [], error = null }) {
                                         className="w-20 h-20 object-cover rounded"
                                     />
                                 ) : (
-                                    <div className="w-20 h-20 bg-gray-200 rounded" />
+                                    <div className="h-20 w-20 rounded border border-[#27272a] bg-[#27272a]" />
                                 )}
                                 <div className="flex-1">
-                                    <h2 className="font-semibold">
+                                    <h2 className="font-semibold text-[#f5f5f4]">
                                         {it.name || `Token ${it.tokenId}`}
                                     </h2>
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-sm text-[#d6d3d1]">
                                         Token ID: {it.tokenId}
                                     </p>
                                     {it.serial && (
-                                        <p className="text-sm text-gray-600">
+                                        <p className="text-sm text-[#d6d3d1]">
                                             Serial: {it.serial}
                                         </p>
                                     )}
                                     {it.mintedAt && (
-                                        <p className="text-xs text-gray-500 mt-1">
+                                        <p className="mt-1 text-xs text-[#999999]">
                                             Minted: {it.mintedAt}
                                         </p>
                                     )}
                                     <div className="mt-2">
                                         <Link
                                             href={`/certificate/${it.tokenId}`}
-                                            className="text-sm font-medium text-[#005d43] hover:text-[#004834] hover:underline"
+                                            className="text-sm font-medium text-[#bfa181] hover:text-[#e1c16e] hover:underline"
                                         >
                                             View certificate
                                         </Link>

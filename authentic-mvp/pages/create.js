@@ -57,27 +57,27 @@ export default function Create() {
 
     return (
         <>
-            <h1 className="text-xl font-semibold text-[#004834]">Create Certificate</h1>
+            <h1 className="text-xl font-semibold text-[#f5f5f4]">Create Certificate</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
                 <input
                     {...register("name")}
                     placeholder="Product Name"
-                    className="w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
+                    className="w-full rounded border border-[#27272a] bg-[#1e1e1e] p-2 text-[#f5f5f4] placeholder:text-[#8e8e8e] focus:border-[#bfa181] focus:outline-none focus:ring-2 focus:ring-[#bfa181]"
                 />
                 <input
                     {...register("serial")}
                     placeholder="Serial Number"
-                    className="w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
+                    className="w-full rounded border border-[#27272a] bg-[#1e1e1e] p-2 text-[#f5f5f4] placeholder:text-[#8e8e8e] focus:border-[#bfa181] focus:outline-none focus:ring-2 focus:ring-[#bfa181]"
                 />
                 <textarea
                     {...register("description")}
                     placeholder="Description"
-                    className="w-full rounded border border-[#c6ece0] p-2 focus:border-[#0c7a5a] focus:outline-none"
+                    className="w-full rounded border border-[#27272a] bg-[#1e1e1e] p-2 text-[#f5f5f4] placeholder:text-[#8e8e8e] focus:border-[#bfa181] focus:outline-none focus:ring-2 focus:ring-[#bfa181]"
                 />
-                <input type="file" {...register("image")} />
+                <input type="file" className="text-[#d6d3d1]" {...register("image")} />
                 <button
                     type="submit"
-                    className="rounded bg-[#005d43] px-4 py-2 font-semibold text-white hover:bg-[#004834] disabled:opacity-50"
+                    className="rounded bg-[#bfa181] px-4 py-2 font-semibold text-[#121212] transition hover:bg-[#e1c16e] disabled:cursor-not-allowed disabled:opacity-50"
                     disabled={loading}
                 >
                     {loading ? "Minting..." : "Mint"}

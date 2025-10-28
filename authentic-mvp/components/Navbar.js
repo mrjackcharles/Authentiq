@@ -17,18 +17,18 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-[#003d2d] via-[#005d43] to-[#0f8c68] text-white shadow">
+        <nav className="border-b border-[#27272a] bg-[#1e1e1e] text-[#f5f5f4] shadow">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
                 <div className="flex flex-1 items-center gap-6 text-sm font-medium">
-                    <Link href="/" className="text-white/85 transition hover:text-white">
+                    <Link href="/" className="text-[#d6d3d1] transition hover:text-[#f5f5f4]">
                         Home
                     </Link>
                     {user && !initializing && (
                         <>
-                            <Link href="/dashboard" className="text-white/85 transition hover:text-white">
+                            <Link href="/dashboard" className="text-[#d6d3d1] transition hover:text-[#f5f5f4]">
                                 Dashboard
                             </Link>
-                            <Link href="/create" className="text-white/85 transition hover:text-white">
+                            <Link href="/create" className="text-[#d6d3d1] transition hover:text-[#f5f5f4]">
                                 Create
                             </Link>
                         </>
@@ -37,7 +37,7 @@ export default function Navbar() {
                 <div className="flex justify-center flex-none px-4">
                     <Link
                         href="/"
-                        className="text-base sm:text-lg font-semibold tracking-[0.35em] uppercase text-white"
+                        className="text-base sm:text-lg font-semibold uppercase tracking-[0.35em] text-[#f5f5f4]"
                     >
                         Authentiq
                     </Link>
@@ -45,12 +45,12 @@ export default function Navbar() {
                 <div className="flex flex-1 items-center justify-end gap-3 text-sm">
                     {initializing ? null : user ? (
                         <>
-                            <span className="rounded-full bg-white/10 px-3 py-1 text-white/85">
+                            <span className="rounded-full bg-[#27272a] px-3 py-1 text-[#d6d3d1]">
                                 {user.email}
                             </span>
                             <button
                                 type="button"
-                                className="rounded-full bg-white/25 px-4 py-2 font-medium text-[#00251b] transition hover:bg-white/40 disabled:opacity-70"
+                                className="rounded-full bg-[#bfa181] px-4 py-2 font-medium text-[#121212] transition hover:bg-[#e1c16e] disabled:opacity-70"
                                 onClick={handleLogout}
                                 disabled={busy}
                             >
@@ -60,7 +60,7 @@ export default function Navbar() {
                     ) : (
                         <Link
                             href="/login"
-                            className="rounded-full bg-white px-4 py-2 font-semibold text-[#005d43] shadow hover:bg-[#dff5ee]"
+                            className="rounded-full bg-[#bfa181] px-4 py-2 font-semibold text-[#121212] shadow hover:bg-[#e1c16e]"
                         >
                             Log in
                         </Link>

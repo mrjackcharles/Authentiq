@@ -35,7 +35,7 @@ function AppContent({ Component, pageProps }) {
     if (!isPublic && (initializing || !user)) {
         return (
             <Layout>
-                <div className="py-12 text-center text-gray-600">Checking credentials…</div>
+                <div className="py-12 text-center text-[#d6d3d1]">Checking credentials…</div>
             </Layout>
         );
     }

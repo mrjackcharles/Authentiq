@@ -64,19 +64,19 @@ export default function Certificate() {
             : metadata.image;
 
     return (
-        <div className="mx-auto max-w-3xl">
-            <div className="bg-white shadow-xl rounded-lg border p-6 md:p-10">
-                <div className="text-center mb-6">
-                    <h1 className="text-3xl font-extrabold tracking-wide">
+        <div className="mx-auto max-w-3xl text-[#f5f5f4]">
+            <div className="rounded-lg border border-[#27272a] bg-[#1e1e1e] p-6 shadow-xl md:p-10">
+                <div className="mb-6 text-center">
+                    <h1 className="text-3xl font-extrabold tracking-wide text-[#f5f5f4]">
                         Certificate of Authenticity
                     </h1>
-                    <p className="text-gray-500 mt-1">Authentiq</p>
+                    <p className="mt-1 text-[#d6d3d1]">Authentiq</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-3">
                     <div className="md:col-span-2">
                         {displayImage ? (
-                            <div className="aspect-[4/3] w-full overflow-hidden rounded border bg-gray-50">
+                            <div className="aspect-[4/3] w-full overflow-hidden rounded border border-[#27272a] bg-[#121212]">
                                 <img
                                     src={displayImage}
                                     alt={metadata.name}
@@ -84,14 +84,14 @@ export default function Certificate() {
                                 />
                             </div>
                         ) : (
-                            <div className="aspect-[4/3] w-full rounded border bg-gray-50" />
+                            <div className="aspect-[4/3] w-full rounded border border-[#27272a] bg-[#121212]" />
                         )}
                     </div>
                     <div className="md:col-span-1">
                         {pageUrl ? (
                             <div className="flex flex-col items-center">
                                 <QRCodeSVG value={pageUrl} size={160} includeMargin />
-                                <p className="text-xs text-gray-500 mt-2 break-all text-center">
+                                <p className="mt-2 break-all text-center text-xs text-[#999999]">
                                     {pageUrl}
                                 </p>
                             </div>
@@ -99,33 +99,33 @@ export default function Certificate() {
                     </div>
                 </div>
 
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                        <div className="text-sm text-gray-500">Name</div>
-                        <div className="font-semibold">{metadata.name}</div>
+                        <div className="text-sm text-[#d6d3d1]">Name</div>
+                        <div className="font-semibold text-[#f5f5f4]">{metadata.name}</div>
                     </div>
                     <div>
-                        <div className="text-sm text-gray-500">Serial</div>
-                        <div className="font-mono">{serial ?? "-"}</div>
+                        <div className="text-sm text-[#d6d3d1]">Serial</div>
+                        <div className="font-mono text-[#f5f5f4]">{serial ?? "-"}</div>
                     </div>
                     <div>
-                        <div className="text-sm text-gray-500">Token ID</div>
-                        <div className="font-mono">{tokenId}</div>
+                        <div className="text-sm text-[#d6d3d1]">Token ID</div>
+                        <div className="font-mono text-[#f5f5f4]">{tokenId}</div>
                     </div>
                     <div>
-                        <div className="text-sm text-gray-500">Network</div>
-                        <div>Polygon Amoy</div>
+                        <div className="text-sm text-[#d6d3d1]">Network</div>
+                        <div className="text-[#f5f5f4]">Polygon Amoy</div>
                     </div>
                     <div className="md:col-span-2">
-                        <div className="text-sm text-gray-500">Description</div>
-                        <div>{metadata.description || "-"}</div>
+                        <div className="text-sm text-[#d6d3d1]">Description</div>
+                        <div className="text-[#d6d3d1]">{metadata.description || "-"}</div>
                     </div>
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center gap-4">
+                <div className="mt-6 flex flex-wrap items-center gap-4 text-[#d6d3d1]">
                     {contractAddress && (
                         <a
-                            className="text-sm font-medium text-[#005d43] hover:text-[#004834] hover:underline"
+                            className="text-sm font-medium text-[#bfa181] hover:text-[#e1c16e] hover:underline"
                             href={tokenExplorerUrl}
                             target="_blank"
                             rel="noreferrer"
@@ -135,7 +135,7 @@ export default function Certificate() {
                     )}
                     {txExplorerUrl && (
                         <a
-                            className="text-sm font-medium text-[#005d43] hover:text-[#004834] hover:underline"
+                            className="text-sm font-medium text-[#bfa181] hover:text-[#e1c16e] hover:underline"
                             href={txExplorerUrl}
                             target="_blank"
                             rel="noreferrer"
@@ -146,7 +146,7 @@ export default function Certificate() {
                     <button
                         type="button"
                         onClick={() => typeof window !== "undefined" && window.print()}
-                        className="ml-auto rounded bg-[#005d43] px-3 py-2 text-sm font-semibold text-white hover:bg-[#004834]"
+                        className="ml-auto rounded bg-[#bfa181] px-3 py-2 text-sm font-semibold text-[#121212] hover:bg-[#e1c16e]"
                     >
                         Print
                     </button>
