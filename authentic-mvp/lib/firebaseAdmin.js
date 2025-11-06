@@ -1,20 +1,19 @@
 import { getApps, initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
+function resolveEnv(key) {
+    const direct = process.env[key];
+    if (direct) return direct;
+    const secrets = process.env?.secrets;
+    return secrets ? secrets[key] : undefined;
+}
+
 // Initialize Firebase Admin SDK once per server instance
 export function getAdminDb() {
     if (!getApps().length) {
-        const projectId = process.env.FIREBASE_PROJECT_ID;
-        const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
-        const privateKeyRaw = process.env.FIREBASE_PRIVATE_KEY;
-
-        console.log(
-            "Admin envs:",
-            !!projectId,
-            !!clientEmail,
-            !!privateKeyRaw,
-            process.env.AWS_BRANCH
-        );
+        const projectId = resolveEnv("FIREBASE_PROJECT_ID");
+        const clientEmail = resolveEnv("FIREBASE_CLIENT_EMAIL");
+        const privateKeyRaw = resolveEnv("FIREBASE_PRIVATE_KEY");
 
         if (!projectId || !clientEmail || !privateKeyRaw) {
             throw new Error(
