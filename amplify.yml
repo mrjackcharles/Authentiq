@@ -8,11 +8,11 @@ applications:
                       - nvm install 20
                       - nvm use 20
                       - node -v
-                      - echo "PWD=$(pwd)"; ls -la
                       - npm ci
               build:
                   commands:
                       - npm run build
+                      - env | grep FIREBASE
           artifacts:
               baseDirectory: .next
               files:
