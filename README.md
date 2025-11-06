@@ -10,12 +10,14 @@ See it live: [https://authentiq.uk](https://authentiq.uk)
 
 ### Tech stack
 
--   NextJS (Frontend)
--   Firebase (Backend)
--   Tailwind (styling)
+-   NextJS
+-   Vanilla JavaScript
+-   Firebase
+-   Tailwind
 -   Third Web (Smart contract (ERC721) managment)
--   Chainstack (manages blockchain communication)
--   Polygon Amoy (test blockchain)
+-   Chainstack (Manages blockchain communication)
+-   Polygon Amoy (Test blockchain)
+-   AWS Amplify (Hosting)
 
 ---
 
@@ -28,7 +30,7 @@ See it live: [https://authentiq.uk](https://authentiq.uk)
 
 ---
 
-## Installation (local)
+## Installation
 
 ### Environment Variables
 
@@ -53,7 +55,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 ```
 
-### Development server
+### Local
 
 Clone the repo:
 
@@ -79,6 +81,8 @@ Run locally:
 npm run dev
 ```
 
+The development server runs at: http://localhost:3000
+
 ### Minting Setup
 
 -   Polygon Amoy Testnet is the test blockchain managed in a Chainstack project
@@ -103,7 +107,7 @@ The mint API writes to the `mintedItems` collection using the `tokenId` as the d
 
 ## Deployment
 
-This application is currently hosted on AWS Amplify with a custom amplify.yml and domain
+This application is currently hosted on AWS Amplify with a custom `amplify.yml` and domain
 
 Version: 0.0.2
 
