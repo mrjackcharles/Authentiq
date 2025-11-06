@@ -4,8 +4,21 @@ import { getFirestore } from "firebase-admin/firestore";
 function resolveEnv(key) {
     const direct = process.env[key];
     if (direct) return direct;
-    const secrets = process.env?.secrets;
-    return secrets ? secrets[key] : undefined;
+
+    const secretsRaw = process.env.secrets;
+    if (typeof secretsRaw !== "string" || !secretsRaw) return undefined;
+
+    try {
+        const secrets = JSON.parse(secretsRaw);
+        if (secrets && typeof secrets === "object") {
+            const value = secrets[key];
+            if (value) return value;
+        }
+    } catch (err) {
+        console.error("Failed to parse process.env.secrets", err);
+    }
+
+    return undefined;
 }
 
 // Initialize Firebase Admin SDK once per server instance
