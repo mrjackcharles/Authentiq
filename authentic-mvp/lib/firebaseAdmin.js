@@ -28,6 +28,16 @@ export function getAdminDb() {
         const clientEmail = resolveEnv("FIREBASE_CLIENT_EMAIL");
         const privateKeyRaw = resolveEnv("FIREBASE_PRIVATE_KEY");
 
+        console.log("Admin env diag", {
+            awsBranch: process.env.AWS_BRANCH,
+            secretsType: typeof process.env.secrets,
+            secretsLength:
+                typeof process.env.secrets === "string"
+                    ? process.env.secrets.length
+                    : 0,
+            hasProjectId: Boolean(process.env.FIREBASE_PROJECT_ID),
+        });
+
         if (!projectId || !clientEmail || !privateKeyRaw) {
             throw new Error(
                 "Missing Firebase Admin env vars: FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY"
