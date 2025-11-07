@@ -79,7 +79,7 @@ export default function Dashboard({ items = [], error = null }) {
 
 export async function getServerSideProps() {
     try {
-        const db = getAdminDb();
+        const db = await getAdminDb();
         const snap = await db
             .collection("mintedItems")
             .orderBy("mintedAt", "desc")

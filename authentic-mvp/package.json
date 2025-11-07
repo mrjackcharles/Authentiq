@@ -11,8 +11,9 @@
         "start": "next start",
         "lint": "eslint"
     },
-    "dependencies": {
-        "@thirdweb-dev/sdk": "^4.0.60",
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.624.0",
+    "@thirdweb-dev/sdk": "^4.0.60",
         "ethers": "^5.8.0",
         "firebase": "^12.2.1",
         "firebase-admin": "^13.5.0",

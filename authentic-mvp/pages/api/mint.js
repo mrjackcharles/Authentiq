@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
         // Persist minted item in Firestore
         try {
-            const db = getAdminDb();
+            const db = await getAdminDb();
             const now = new Date().toISOString();
             const txHash = tx?.receipt?.transactionHash || null;
 

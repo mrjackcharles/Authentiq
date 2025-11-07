@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   if (req.method !== "GET") return res.status(405).end();
 
   try {
-    const db = getAdminDb();
+    const db = await getAdminDb();
     const doc = await db.collection("mintedItems").doc(String(id)).get();
     res.setHeader("Cache-Control", "no-store");
 
@@ -32,4 +32,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: err.message });
   }
 }
-
