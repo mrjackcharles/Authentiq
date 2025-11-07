@@ -1,3 +1,8 @@
+// ✅ Force Node.js runtime (important for Amplify SSR)
+export const config = {
+    runtime: "nodejs",
+};
+
 import { getAdminEnvStatus } from "@/lib/firebaseAdmin";
 
 export default async function handler(req, res) {
@@ -12,7 +17,10 @@ export default async function handler(req, res) {
             status,
             metadata: {
                 branch: process.env.AWS_BRANCH || null,
-                region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION || null,
+                region:
+                    process.env.AWS_REGION ||
+                    process.env.AWS_DEFAULT_REGION ||
+                    null,
                 ssmPrefix: process.env.AMPLIFY_SSM_PREFIX || null,
                 timestamp: new Date().toISOString(),
             },
