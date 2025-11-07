@@ -1,11 +1,12 @@
-// ✅ Force Node.js runtime (important for Amplify SSR)
-export const config = {
-    runtime: "nodejs",
-};
+// Force Node runtime
+export const config = { runtime: "nodejs" };
 
 import { getAdminEnvStatus } from "@/lib/firebaseAdmin";
 
 export default async function handler(req, res) {
+    // never cache this
+    res.setHeader("Cache-Control", "no-store, max-age=0");
+
     if (req.method !== "GET") return res.status(405).end();
 
     try {
