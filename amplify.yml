@@ -12,7 +12,6 @@ applications:
               build:
                   commands:
                       - npm run build
-                      - env | grep FIREBASE
           artifacts:
               baseDirectory: .next
               files:

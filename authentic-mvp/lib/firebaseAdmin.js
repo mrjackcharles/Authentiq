@@ -92,3 +92,20 @@ export function getAdminDb() {
     }
     return firestorePromise;
 }
+
+export async function getAdminEnvStatus() {
+    const keys = [
+        "FIREBASE_PROJECT_ID",
+        "FIREBASE_CLIENT_EMAIL",
+        "FIREBASE_PRIVATE_KEY",
+    ];
+
+    const entries = await Promise.all(
+        keys.map(async (key) => {
+            const value = await resolveEnv(key);
+            return [key, Boolean(value)];
+        })
+    );
+
+    return Object.fromEntries(entries);
+}
